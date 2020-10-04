@@ -39,28 +39,6 @@ Keras 2.1.5, Tensorflow-gpu 1.15, Install Mask_RCNN ([Matterport](https://github
 2. Since images for validation set were not available, as given in modanet dataset. I took the train dataset json consisting of 52,377 images and did 85 : 15 split it into train json and validation json.
 `python split.py -s 0.85 modanet2018_instances_train.json data/train/instances_train.json data/val/instances_val.json`
 
-#### Directory Structure:
-.
-├── data
-│   ├── images
-│   ├── train
-│   └── val
-└── Mask_RCNN
-    ├── assets
-    ├── build
-    │   ├── bdist.linux-x86_64
-    │   └── lib
-    │       └── mrcnn
-    ├── dist
-    ├── images
-    ├── mask_rcnn.egg-info
-    ├── mrcnn
-    └── samples
-        ├── balloon
-        ├── coco
-        ├── nucleus
-        └── shapes
-
 ## Model Used 
 
    I used [Matterport](https://github.com/matterport/Mask_RCNN)'s implementation of Mask- RCNN
