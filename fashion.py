@@ -1,24 +1,4 @@
 
-"""
-Mask R-CNN
-Train on the modanet dataset.
-Copyright (c) 2018 Matterport, Inc.
-Licensed under the MIT License (see LICENSE for details)
-Written by Shrey Jasuja
-------------------------------------------------------------
-Usage: import the module (see Jupyter notebooks for examples), or run from
-       the command line as such:
-    # Train a new model starting from pre-trained COCO weights
-    python3 fashion.py train --dataset=/path/to/modanet/dataset --weights=coco
-    # Resume training a model that you had trained earlier
-    python3 fashion.py train --dataset=/path/to/modanet/dataset --weights=last
-    # Train a new model starting from ImageNet weights
-    python3 fashion.py train --dataset=/path/to/modanet/dataset --weights=imagenet
-    # Apply color segmentation to an image
-    python3 fashion.py splash --weights=/path/to/modanet/file.h5 --image=<URL or path to file>
-    # Apply color segmentation to video using the last weights you trained
-    python3 fashion.py splash --weights=last --video=<URL or path to file>
-"""
 
 import os
 import sys
