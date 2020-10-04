@@ -39,17 +39,40 @@ Keras 2.1.5, Tensorflow-gpu 1.15, Install Mask_RCNN ([Matterport](https://github
 2. Since images for validation set were not available, as given in modanet dataset. I took the train dataset json consisting of 52,377 images and did 85 : 15 split it into train json and validation json.
 `python split.py -s 0.85 modanet2018_instances_train.json data/train/instances_train.json data/val/instances_val.json`
 
+#### Directory Structure:
+.
+├── data
+│   ├── images
+│   ├── train
+│   └── val
+└── Mask_RCNN
+    ├── assets
+    ├── build
+    │   ├── bdist.linux-x86_64
+    │   └── lib
+    │       └── mrcnn
+    ├── dist
+    ├── images
+    ├── mask_rcnn.egg-info
+    ├── mrcnn
+    └── samples
+        ├── balloon
+        ├── coco
+        ├── nucleus
+        └── shapes
+
 ## Model Used 
 
    I used [Matterport](https://github.com/matterport/Mask_RCNN)'s implementation of Mask- RCNN
         
 Mask R-CNN (regional convolutional neural network) is a two stage framework: the first stage scans the image and generates  proposals(areas likely to contain an object). And the second stage classifies the proposals and generates bounding boxes and masks.
 
-It was introduced last year via the  [Mask R-CNN paper](https://arxiv.org/abs/1703.06870)  to extend its predecessor,  [Faster R-CNN](https://arxiv.org/abs/1506.01497), by the same authors. Faster R-CNN is a popular framework for object detection, and Mask R-CNN extends it with instance segmentation, among other things.
+It was introduced in 2017 via the  [Mask R-CNN paper](https://arxiv.org/abs/1703.06870)  to extend its predecessor,  [Faster R-CNN](https://arxiv.org/abs/1506.01497), by the same authors. Faster R-CNN is a popular framework for object detection, and Mask R-CNN extends it with instance segmentation, among other things.
 
 Matterport's Mask RCNN uses a ResNet101 + FPN backbone
 
 I trained only head layers of architecture upto 40 epochs using pre-trained weights on COCO dataset.
+
   
  #### Modes to Run:
  1. Training  --- `python fashion.py train --dataset data --weights coco`
